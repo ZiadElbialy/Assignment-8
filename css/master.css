@@ -89,9 +89,19 @@ main .images {
     padding: 15px;
 }
 
+main .images .card {
+    overflow: hidden;
+}
+
 main .images .card img {
     width: 100%;
     height: 100%;
+    transition: transform 0.4s ease-in-out 0s;
+    transform: scale(1) rotate(0deg);
+}
+
+main .images .card img:hover {
+    transform: scale(1.2) rotate(6deg);
 }
 
 footer {
