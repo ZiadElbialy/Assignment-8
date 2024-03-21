@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    border: 0;
+    outline: 0;
+    font-family: "Arima", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 240px repeat(3, 1fr);
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+        "nav nav nav nav"
+        "aside main main main"
+        "aside footer footer footer";
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-bottom: 1px solid #12121232;
+    grid-area: nav;
+    background-color: #fbfbfb;
+}
+
+header .logo h1 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+aside {
+    grid-area: aside;
+    padding: 10px;
+    background-color: #121212;
+}
+
+aside h2 {
+    color: white;
+    font-size: 18px;
+}
+
+aside p {
+    color: white;
+    margin: 10px 0;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+aside ul li a {
+    color: white;
+}
+
+main {
+    grid-area: main;
+    background-color: #ffffff;
+}
+
+main .gallery .text {
+    padding: 15px 15px 0 15px;
+}
+
+main .gallery .text h2 {
+    color: #121212;
+    font-size: 24px;
+}
+
+main .images {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minMax(300px, 1fr));
+    padding: 15px;
+}
+
+main .images .card img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: #12121232 1px solid;
+}
+
+@media screen and (max-width: 800px) {
+    aside {
+        display: none;
+    }
+    body {
+        grid-template-areas:
+            "nav nav nav nav"
+            "main main main main"
+            "footer footer footer footer";
+    }
+}
